@@ -223,7 +223,7 @@ SERVERINFO="\"name\":\"Nova4e\",\"type\":\"termux\",\"host\":\"${USER}\",\"locat
 
 ******
 
-- 历史版本更新记录可前往[RELEASES 页面](https://github.com/zsuroy/ipAct/realease) 查看
+- 历史版本更新记录可前往[RELEASES 页面](https://github.com/zsuroy/ServerStatus-Tiny/realease) 查看
 
 
 ## ☄️致谢开源

@@ -8,7 +8,7 @@ INTERVAL=1 # Update interval
 
 BACKENDMODE=0 # 后端模式: 0启动
 SOURCEID=1  # 网络通讯正常测试源 [0: GFW, 1; CN]
-SERVERINFO="\"name\":\"Nova4e\",\"type\":\"termux\",\"host\":\"${USER}\",\"location\":\"CN\",\"region\":\"CN\",\"custom\":\"\","
+SERVERINFO="\"name\":\"Nova4e\",\"type\":\"termux\",\"host\":\"${USER}\",\"location\":\"CN\",\"region\":\"CN\",\"os\":\"docker\",\"custom\":\"\","
 
 # adapted for termux
 is_termux () {

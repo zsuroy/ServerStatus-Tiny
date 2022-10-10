@@ -25,7 +25,7 @@ PORT = 80                 # none
 USER = "SUE-1"                # hostname
 PASSWORD = "123"   # the verified password
 INTERVAL = 5  # 更新间隔，单位：秒
-SERVERINFO = {"name": "MAC", "type": "KVM", "host": USER, "location": "CN", "region": "CN"}
+SERVERINFO = {"name": "MAC", "type": "KVM", "host": USER, "location": "CN", "region": "CN", "os": "linux"}
 
 # ===> either socket or backend mode shoule be saved.
 

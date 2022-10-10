@@ -46,7 +46,7 @@ switch ($mod) {
         $param = json_decode($param, true);
         if(!is_array($param))exit('{"code":"-2","msg":"data error"}');
         $param["uptime"] = is_numeric($param["uptime"]) ? date("H:i:s", $param["uptime"]):$param["uptime"];
-        $param["updated"] = time();
+        $param["updated"] = date("m-d H:i:s");
         $param["ip"] = $_SERVER["REMOTE_ADDR"];
         $content = file_get_contents(FILE_NAME);
         $info = (array)json_decode($content, true);
@@ -57,6 +57,10 @@ switch ($mod) {
                 $existFlag = true;
                 break;
             }
+			else if(isset($v['updated']) && time()-strtotime(date('Y-').$v['updated'])>=1800){ //offline
+				$info["servers"][$k]["online4"] = false;
+				$info["servers"][$k]["online6"] = false;
+			}
         }
 
         if(!$existFlag)$info["servers"][$k+1] = $param; // new

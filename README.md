@@ -35,7 +35,7 @@
 1. 基于 ServerStatus-Hotaru 开发
 2. `开发` 后端为 `PHP` 接口，以实现 `Windows/Linux` **均可架设服务端**
 3. `小改` UI界面-VUE，优化卡片显示
-4. `增加` 树莓派(`Raspberry`)、`Termux`、`Linux` 旗帜
+4. `增加` 各操作系统旗帜：含树莓派(`Raspberry`)、`Termux`、`Linux` 等
 5. `增加` 双栈 `IPV6/IPV4` 监控支持、增加国内服务器在线监控支持
 6. `增加` 单个服务器监控IP地址数据、在线时间字段
 7. `适配` `Termux`，能够监控 termux，支持androd7+，无root/root均可
@@ -147,17 +147,27 @@ SERVERINFO="\"name\":\"Nova4e\",\"type\":\"termux\",\"host\":\"${USER}\",\"locat
 ```json
 { "name": "显示名","type":"架构","host":"主机名-唯一标示","location":"地区","region":"地区-旗帜","custom":"用户自定义显示内容","online4":"IPV4状态","online6":"IPV4状态","uptime":"服务器在线时间","load":"服务器负载","memory_total":"总内存","memory_used":"已用内存","swap_total":"swap","swap_used":750628,"hdd_total":"硬盘大小","hdd_used":25600,"cpu":0,"network_rx":3020,"network_tx":1020, "network_in": 40924739, "network_out": 14312368,"updated":"上次更新时间戳","ip":"IP地址"}
 
-{ "name": "Linux","type":"Arm","host":"SUROY","location":"CN","region":"linux","custom":"","online4":true,"online6":false,"uptime":"7d 12:36","load":1.25,"memory_total":9768472,"memory_used":1249760,"swap_total":2393756,"swap_used":750628,"hdd_total":213780,"hdd_used":25600,"cpu":0,"network_rx":3020,"network_tx":1020, "network_in": 40924739, "network_out": 14312368,"updated":1664829323,"ip":"192.168.1.4"}
+{ "name": "Linux","type":"Arm","host":"SUROY","location":"CN","region":"linux","os":"archlinux","custom":"","online4":true,"online6":false,"uptime":"7d 12:36","load":1.25,"memory_total":9768472,"memory_used":1249760,"swap_total":2393756,"swap_used":750628,"hdd_total":213780,"hdd_used":25600,"cpu":0,"network_rx":3020,"network_tx":1020, "network_in": 40924739, "network_out": 14312368,"updated":"10-10 12:30:40","ip":"192.168.1.4"}
 ```
 
 特殊旗帜：树莓派`raspberry`、Termux`termux`、Linux`linux`、海盗旗`pirate`、彩虹旗`rainbow`、`trans`
 
-替换旗帜即替换 `region` 属性内容
+替换旗帜即替换 `region` 或 `os` 属性内容，更多旗帜参考 `V1.0.2` 更新
 
 - 运行有问题请查看 [🏄🏻注意事项](#🏄🏻注意事项)
 - 二次开发请查看 [🍧开发说明](#🍧开发说明)
 
 ******
+
+## 🕹计划任务
+
+> Termux 开机自启任务
+
+```shell
+#!/data/data/com.termux/files/usr/bin/sh
+screen -wipe
+screen -dmS status python3 /data/data/com.termux/files/home/ServerStatus/status-psutil.py
+```
 
 
 ## 🏄🏻注意事项
@@ -223,8 +233,14 @@ SERVERINFO="\"name\":\"Nova4e\",\"type\":\"termux\",\"host\":\"${USER}\",\"locat
 
 ******
 
-- 历史版本更新记录可前往[RELEASES 页面](https://github.com/zsuroy/ipAct/realease) 查看
+- 历史版本更新记录可前往[RELEASES 页面](https://github.com/zsuroy/ServerStatus-Tiny/realease) 查看
 
+### V1.0.2 22.10.8-10
+
+- WEB: 新增离线检测判定服务 `app.php`
+- 新增服务器ip、在线时间显示
+- 旗帜新增 `ubuntu`、`debian`、`windows`、`docker`、`fedora`、`centos`、`suselinux`、`archlinux`、`nas`、`router`、`android`、`mac`、`ios`
+- 双旗帜卡片显示模式: 左侧地区、右侧系统
 
 ## ☄️致谢开源
 

@@ -235,12 +235,15 @@ screen -dmS status python3 /data/data/com.termux/files/home/ServerStatus/status-
 
 - 历史版本更新记录可前往[RELEASES 页面](https://github.com/zsuroy/ServerStatus-Tiny/realease) 查看
 
-### V1.0.2 22.10.8-10
+### V1.0.2 / 22.10.8-10
 
 - WEB: 新增离线检测判定服务 `app.php`
 - 新增服务器ip、在线时间显示
-- 旗帜新增 `ubuntu`、`debian`、`windows`、`docker`、`fedora`、`centos`、`suselinux`、`archlinux`、`nas`、`router`、`android`、`mac`、`ios`
 - 双旗帜卡片显示模式: 左侧地区、右侧系统
+- 旗帜新增列表如下:  
+ `ubuntu`、`debian`、`windows`、`docker`、`fedora`、`centos`、`suselinux`、`archlinux`、`nas`、`router`、`android`、`mac`、`ios`、`alpine`
+- 原有旗帜:  
+  各个国家旗帜及 `raspberry`、`termux`、`linux`、`pirate`、`rainbow`、`trans`
 
 ## ☄️致谢开源
 
